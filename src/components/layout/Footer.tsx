@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Facebook, Twitter, Instagram, Mail, Phone, MapPin, Heart } from "lucide-react";
+import { Facebook, Twitter, Instagram, Mail, Phone, MapPin, Heart, ChevronRight } from "lucide-react";
 
 export function Footer() {
   return (
@@ -14,10 +14,8 @@ export function Footer() {
           
           {/* Brand & Mission (Takes up more space on large screens) */}
           <div className="md:col-span-12 lg:col-span-4">
-            <Link to="/" className="inline-block mb-6">
-              <h3 className="text-3xl font-black tracking-tighter text-white flex items-center gap-2">
-                <span className="bg-primary text-white px-2 py-1 rounded-md">KECT</span>
-              </h3>
+            <Link to="/" className="inline-block mb-6 bg-white/95 p-3 rounded-2xl shadow-lg transition-transform hover:scale-105">
+              <img src="/kect-logo.png" alt="KECT Logo" className="h-[60px] w-auto object-contain" />
             </Link>
             <p className="text-blue-100/80 text-base mb-8 leading-relaxed pr-4">
               The Kolkata Educational and Charitable Trust is dedicated to empowering underprivileged communities through quality education, skill development, and holistic support.
@@ -39,11 +37,11 @@ export function Footer() {
           <div className="md:col-span-4 lg:col-span-2 lg:col-start-6">
             <h4 className="text-lg font-bold mb-6 text-white">Explore</h4>
             <ul className="space-y-4 text-sm text-blue-100/80">
-              <li><Link to="/about" className="hover:text-primary transition-colors flex items-center gap-2"><span className="w-1 h-1 rounded-full bg-primary"></span> About Us</Link></li>
-              <li><Link to="/projects/academy" className="hover:text-primary transition-colors flex items-center gap-2"><span className="w-1 h-1 rounded-full bg-primary"></span> The Academy</Link></li>
-              <li><Link to="/news/events" className="hover:text-primary transition-colors flex items-center gap-2"><span className="w-1 h-1 rounded-full bg-primary"></span> Latest Events</Link></li>
-              <li><Link to="/gallery" className="hover:text-primary transition-colors flex items-center gap-2"><span className="w-1 h-1 rounded-full bg-primary"></span> Gallery</Link></li>
-              <li><Link to="/contact" className="hover:text-primary transition-colors flex items-center gap-2"><span className="w-1 h-1 rounded-full bg-primary"></span> Contact</Link></li>
+              <li><Link to="/about" className="hover:text-primary transition-colors flex items-center gap-2 group"><ChevronRight className="w-4 h-4 text-primary group-hover:translate-x-1 transition-transform" /> About Us</Link></li>
+              <li><Link to="/projects/academy" className="hover:text-primary transition-colors flex items-center gap-2 group"><ChevronRight className="w-4 h-4 text-primary group-hover:translate-x-1 transition-transform" /> The Academy</Link></li>
+              <li><Link to="/news/events" className="hover:text-primary transition-colors flex items-center gap-2 group"><ChevronRight className="w-4 h-4 text-primary group-hover:translate-x-1 transition-transform" /> Latest Events</Link></li>
+              <li><Link to="/gallery" className="hover:text-primary transition-colors flex items-center gap-2 group"><ChevronRight className="w-4 h-4 text-primary group-hover:translate-x-1 transition-transform" /> Gallery</Link></li>
+              <li><Link to="/contact" className="hover:text-primary transition-colors flex items-center gap-2 group"><ChevronRight className="w-4 h-4 text-primary group-hover:translate-x-1 transition-transform" /> Contact</Link></li>
             </ul>
           </div>
 
@@ -89,9 +87,9 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-sm text-blue-100/60">
+        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-sm text-blue-100/60 text-center md:text-left gap-4">
           <p>&copy; {new Date().getFullYear()} The Kolkata Educational and Charitable Trust. All rights reserved.</p>
-          <div className="flex items-center gap-6 mt-4 md:mt-0">
+          <div className="flex flex-wrap justify-center items-center gap-4 mt-4 md:mt-0">
             <Link to="#" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link to="#" className="hover:text-white transition-colors">Terms of Service</Link>
             <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs">Trust Reg No: [PLACEHOLDER]</span>

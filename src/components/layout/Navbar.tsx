@@ -5,7 +5,6 @@ import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "motion/react";
 
 const NAV_LINKS = [
-  { label: "Home", href: "/" },
   { 
     label: "About", 
     href: "/about",
@@ -72,18 +71,13 @@ export function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-background/90 backdrop-blur-md border-b border-gray-200/50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+    <div className="sticky top-4 mt-4 mb-8 md:top-6 md:mt-6 md:mb-10 z-50 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <header className="bg-white/95 backdrop-blur-md border border-gray-100 shadow-lg rounded-[2.5rem] relative">
+        <div className="flex justify-between items-center px-4 md:px-6 h-20">
           {/* Logo */}
-          <div className="flex-shrink-0 flex items-center gap-2">
-            <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center shadow-sm">
-               <div className="w-4 h-4 bg-white rounded-full"></div>
-            </div>
-            <Link to="/" className="text-2xl font-bold text-navy tracking-tight">
-              KECT
-            </Link>
-          </div>
+          <Link to="/" className="flex-shrink-0 flex items-center">
+            <img src="/kect-logo.png" alt="KECT Logo" className="h-[60px] md:h-[60px] w-auto object-contain transition-transform hover:scale-105" />
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex space-x-1 items-center" ref={dropdownRef}>
@@ -93,7 +87,7 @@ export function Navbar() {
                   <button
                     onClick={() => toggleDropdown(link.label)}
                     className={cn(
-                      "flex items-center px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200",
+                      "flex items-center px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-200",
                       (location.pathname.startsWith(`/${link.label.toLowerCase()}`) || 
                        link.subLinks.some(sub => location.pathname === sub.href))
                         ? "text-brand bg-secondary/30"
@@ -108,7 +102,7 @@ export function Navbar() {
                   <Link
                     to={link.href}
                     className={cn(
-                      "flex items-center px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200",
+                      "flex items-center px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-200",
                       location.pathname === link.href
                         ? "text-brand bg-secondary/30"
                         : "text-gray-700 hover:text-brand hover:bg-gray-50"
@@ -120,13 +114,13 @@ export function Navbar() {
 
                 {/* Desktop Dropdown */}
                 {link.subLinks && activeDropdown === link.label && (
-                  <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-2xl shadow-xl border border-gray-100 py-2 overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200">
+                  <div className="absolute top-full left-0 mt-4 w-60 bg-white rounded-3xl shadow-xl border border-gray-100 p-2 overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200">
                     {link.subLinks.map((subLink) => (
                       <Link
                         key={subLink.label}
                         to={subLink.href}
                         className={cn(
-                          "block px-5 py-2.5 text-sm font-medium transition-colors hover:bg-secondary/20 hover:text-brand",
+                          "block px-5 py-3 text-sm font-medium transition-colors hover:bg-secondary/20 hover:text-brand rounded-full mb-1 last:mb-0",
                           location.pathname === subLink.href ? "text-brand bg-secondary/10" : "text-gray-600"
                         )}
                       >
@@ -143,7 +137,7 @@ export function Navbar() {
           <div className="hidden lg:flex items-center space-x-4">
             <Link
               to="/get-involved"
-              className="text-sm font-semibold text-gray-700 hover:text-brand transition-colors"
+              className="text-sm font-semibold px-4 py-2 rounded-full text-gray-700 hover:text-brand hover:bg-gray-50 transition-colors"
             >
               Get Involved
             </Link>
@@ -162,7 +156,7 @@ export function Navbar() {
           <div className="flex items-center lg:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-full text-gray-600 hover:text-brand hover:bg-secondary/30 focus:outline-none transition-colors"
+              className="inline-flex items-center justify-center p-3 rounded-full text-gray-600 hover:text-brand hover:bg-secondary/30 focus:outline-none transition-colors"
             >
               <span className="sr-only">Open main menu</span>
               {isOpen ? (
@@ -173,25 +167,25 @@ export function Navbar() {
             </button>
           </div>
         </div>
-      </div>
+      </header>
 
       {/* Mobile Navigation */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            className="lg:hidden bg-white border-b border-gray-100 overflow-hidden shadow-lg"
+            initial={{ height: 0, opacity: 0, y: -10 }}
+            animate={{ height: "auto", opacity: 1, y: 0 }}
+            exit={{ height: 0, opacity: 0, y: -10 }}
+            className="lg:hidden absolute left-4 right-4 sm:left-6 sm:right-6 mt-4 bg-white rounded-3xl border border-gray-100 overflow-hidden shadow-xl"
           >
-            <div className="pt-2 pb-6 space-y-1 px-4 max-h-[80vh] overflow-y-auto">
+            <div className="pt-4 pb-6 space-y-1 px-4 max-h-[80vh] overflow-y-auto">
               {NAV_LINKS.map((link) => (
                 <div key={link.label} className="py-1">
                   {link.subLinks ? (
                     <div>
                       <button
                         onClick={() => toggleDropdown(link.label)}
-                        className="flex items-center justify-between w-full py-3 px-4 text-base font-bold text-gray-900 hover:bg-secondary/20 rounded-xl transition-colors"
+                        className="flex items-center justify-between w-full py-3 px-5 text-base font-bold text-gray-900 hover:bg-secondary/20 rounded-2xl transition-colors"
                       >
                         {link.label}
                         <ChevronDown className={cn("w-5 h-5 transition-transform duration-200", activeDropdown === link.label && "rotate-180")} />
@@ -209,7 +203,7 @@ export function Navbar() {
                                 key={subLink.label}
                                 to={subLink.href}
                                 className={cn(
-                                  "block py-2.5 px-4 text-sm font-medium rounded-lg transition-colors",
+                                  "block py-2.5 px-5 text-sm font-medium rounded-full transition-colors",
                                   location.pathname === subLink.href
                                     ? "text-brand bg-secondary/20"
                                     : "text-gray-600 hover:text-brand hover:bg-gray-50"
@@ -226,7 +220,7 @@ export function Navbar() {
                     <Link
                       to={link.href}
                       className={cn(
-                        "block py-3 px-4 text-base font-bold rounded-xl transition-colors",
+                        "block py-3 px-5 text-base font-bold rounded-2xl transition-colors",
                         location.pathname === link.href
                           ? "text-brand bg-secondary/20"
                           : "text-gray-900 hover:bg-secondary/20"
@@ -240,13 +234,13 @@ export function Navbar() {
               <div className="pt-6 px-4 pb-4 space-y-4">
                 <Link
                   to="/get-involved"
-                  className="block w-full text-center py-3 text-base font-bold text-brand bg-secondary/30 rounded-xl hover:bg-secondary/50 transition-colors"
+                  className="block w-full text-center py-3 text-base font-bold text-brand bg-secondary/30 rounded-full hover:bg-secondary/50 transition-colors"
                 >
                   Get Involved
                 </Link>
                 <Link
                   to="/donate"
-                  className="w-full inline-flex items-center justify-center px-6 py-3 rounded-xl text-base font-bold transition-all group bg-brand text-white hover:bg-brand/90 shadow-md"
+                  className="w-full inline-flex items-center justify-center px-6 py-3 rounded-full text-base font-bold transition-all group bg-brand text-white hover:bg-brand/90 shadow-md"
                 >
                   <span className="mr-2">Donate Now</span>
                   <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
@@ -256,6 +250,6 @@ export function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </div>
   );
 }
