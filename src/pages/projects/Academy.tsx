@@ -69,7 +69,7 @@ export function AcademyIntro() {
       </p>
       <div className="relative mb-8">
         <div className="absolute inset-0 bg-brand/5 rounded-3xl transform translate-x-4 translate-y-4"></div>
-        <img src="https://picsum.photos/seed/academy-intro/800/400" alt="Academy" className="relative rounded-3xl shadow-xl w-full object-cover h-64" referrerPolicy="no-referrer" />
+        <img src="/kect-logo.png" alt="Academy" className="relative rounded-3xl shadow-xl w-full object-cover h-96 md:h-128" referrerPolicy="no-referrer" />
       </div>
       <p className="text-lg text-gray-600 leading-relaxed">
         Our goal is to ensure that every child, regardless of their background, has access to quality education that sets them up for future success.
@@ -132,8 +132,8 @@ export function AcademyFacilities() {
         We provide state-of-the-art facilities, including smart classrooms, a well-stocked library, and safe play areas.
       </p>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        <img src="https://picsum.photos/seed/classroom/400/300" alt="Classroom" className="rounded-2xl shadow-sm w-full object-cover h-48" referrerPolicy="no-referrer" />
-        <img src="https://picsum.photos/seed/library/400/300" alt="Library" className="rounded-2xl shadow-sm w-full object-cover h-48" referrerPolicy="no-referrer" />
+        <img src="https://picsum.photos/seed/classroom/400/300" alt="Classroom" className="rounded-2xl shadow-sm w-full object-cover h-96" referrerPolicy="no-referrer" />
+        <img src="https://picsum.photos/seed/library/400/300" alt="Library" className="rounded-2xl shadow-sm w-full object-cover h-96" referrerPolicy="no-referrer" />
       </div>
     </div>
   );

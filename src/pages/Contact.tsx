@@ -1,9 +1,42 @@
+import React, { useState } from "react";
 import { Hero } from "@/components/ui/Hero";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { PillButton } from "@/components/ui/PillButton";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Loader2, CheckCircle2 } from "lucide-react";
 
 export function Contact() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        setIsSuccess(true);
+        form.reset();
+      } else {
+        alert("Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      alert("Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="bg-background min-h-screen">
       <Hero
@@ -59,7 +92,22 @@ export function Contact() {
         <div>
           <div className="bg-white p-6 md:p-10 rounded-3xl shadow-xl border border-gray-100">
             <h3 className="text-3xl font-bold text-brand mb-8">Send a Message</h3>
-            <form action="https://formsubmit.co/kect.wb@gmail.com" method="POST" className="space-y-6">
+            {isSuccess ? (
+              <div className="bg-green-50 border border-green-200 rounded-2xl p-8 text-center animate-in fade-in slide-in-from-bottom-4">
+                <div className="w-16 h-16 bg-green-100 text-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <CheckCircle2 className="w-8 h-8" />
+                </div>
+                <h4 className="text-2xl font-bold text-green-800 mb-2">Message Sent!</h4>
+                <p className="text-green-700 mb-6">Thank you for reaching out. We will get back to you shortly.</p>
+                <button 
+                  onClick={() => setIsSuccess(false)}
+                  className="px-6 py-2 bg-green-600 text-white rounded-lg font-medium hover:bg-green-700 transition-colors"
+                >
+                  Send Another Message
+                </button>
+              </div>
+            ) : (
+            <form onSubmit={handleSubmit} action="https://formsubmit.co/kect.wb@gmail.com" method="POST" className="space-y-6">
               <input type="hidden" name="_subject" value="New Contact Request" />
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_template" value="box" />
@@ -86,10 +134,11 @@ export function Contact() {
                 <label className="block text-sm font-bold text-gray-700 mb-2">Message *</label>
                 <textarea rows={5} name="Message" required className="w-full px-5 py-4 rounded-xl border-2 border-gray-100 bg-gray-50 focus:bg-white focus:ring-0 focus:border-brand transition-colors" placeholder="Your message here..."></textarea>
               </div>
-              <button type="submit" className="w-full py-4 bg-brand text-white font-bold rounded-xl hover:bg-brand/90 transition-colors flex items-center justify-center gap-2 text-lg">
-                Send Message <Send className="w-5 h-5" />
+              <button type="submit" disabled={isSubmitting} className="w-full py-4 bg-brand text-white font-bold rounded-xl hover:bg-brand/90 transition-colors flex items-center justify-center gap-2 text-lg disabled:opacity-70 disabled:cursor-not-allowed">
+                {isSubmitting ? <Loader2 className="w-5 h-5 animate-spin" /> : <>Send Message <Send className="w-5 h-5" /></>}
               </button>
             </form>
+            )}
           </div>
         </div>
       </div>

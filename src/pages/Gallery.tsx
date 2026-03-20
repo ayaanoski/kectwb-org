@@ -17,11 +17,11 @@ export function Gallery() {
           </p>
         </div>
 
-        <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+        <div className="columns-1 sm:columns-2 lg:columns-4 gap-6 space-y-6">
           {Array.from({ length: 32 }).map((_, i) => (
             <div key={i} className="break-inside-avoid rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group relative">
               <img
-                src={`/gallery/${i + 1}.jpg`}
+                src={`/gallery/gallery_${i + 1}.jpg`}
                 alt={`Gallery image ${i + 1}`}
                 className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
                 referrerPolicy="no-referrer"

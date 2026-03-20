@@ -8,7 +8,7 @@ export function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Section 1: Hero Area */}
-      <section className="p-4 md:p-6 lg:p-8">
+      <section className="p-2 sm:p-4 md:p-6 lg:p-8">
         <div className="relative rounded-[2rem] overflow-hidden bg-navy min-h-[85vh] flex items-center">
           <img
             src="/home/banner.jpg"
@@ -16,10 +16,10 @@ export function Home() {
             className="absolute inset-0 w-full h-full object-cover opacity-90 mix-blend-overlay"
             referrerPolicy="no-referrer"
           />
-          <div className="relative z-10 p-8 md:p-16 w-full flex flex-col lg:flex-row justify-between items-center gap-12 max-w-7xl mx-auto">
-            <div className="max-w-2xl text-left w-full">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-white mb-6 leading-[1.1]">
-                Empowering futures <br /> for a better world
+          <div className="relative z-10 px-5 py-12 sm:p-8 md:p-16 w-full flex flex-col lg:flex-row justify-between items-center gap-10 md:gap-12 max-w-7xl mx-auto">
+            <div className="max-w-2xl text-left w-full overflow-hidden">
+              <h1 className="text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold text-white mb-6 leading-[1.15] sm:leading-[1.1] tracking-tight break-words">
+                Empowering futures <br className="hidden sm:block" /> for a better world
               </h1>
               <p className="text-gray-200 text-lg mb-10 max-w-xl leading-relaxed">
                 KECT provides sustainable educational solutions for underprivileged communities. We are committed to providing quality education, skill development, and community welfare. Join us in making a difference today.

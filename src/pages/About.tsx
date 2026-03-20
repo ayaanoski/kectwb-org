@@ -35,19 +35,6 @@ export function About() {
               className="relative rounded-3xl shadow-xl w-full object-cover aspect-video"
               referrerPolicy="no-referrer"
             />
-
-            {/* Floating Stats Card */}
-            <div className="absolute -bottom-4 md:-bottom-8 left-4 md:-left-8 bg-white p-6 rounded-2xl shadow-xl border border-gray-100 max-w-xs">
-              <div className="flex items-center gap-4 mb-2">
-                <div className="w-12 h-12 bg-brand/10 rounded-full flex items-center justify-center text-brand">
-                  <Users className="w-6 h-6" />
-                </div>
-                <div>
-                  <h4 className="text-3xl font-bold text-brand">9</h4>
-                  <p className="text-sm font-semibold text-gray-500 uppercase tracking-wider">Expert Trustees</p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
