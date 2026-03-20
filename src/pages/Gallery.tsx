@@ -18,13 +18,14 @@ export function Gallery() {
         </div>
 
         <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
-          {Array.from({ length: 12 }).map((_, i) => (
+          {Array.from({ length: 32 }).map((_, i) => (
             <div key={i} className="break-inside-avoid rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group relative">
               <img
-                src={`https://picsum.photos/seed/gallery${i}/600/${Math.floor(Math.random() * 400) + 400}`}
+                src={`/gallery/${i + 1}.jpg`}
                 alt={`Gallery image ${i + 1}`}
                 className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
                 referrerPolicy="no-referrer"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-brand/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                 <p className="text-white font-bold text-lg">Impact Moment #{i + 1}</p>

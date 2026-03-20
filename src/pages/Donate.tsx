@@ -19,7 +19,7 @@ export function Donate() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     const form = e.currentTarget;
     const formData = new FormData(form);
 
@@ -31,7 +31,7 @@ export function Donate() {
           'Accept': 'application/json'
         }
       });
-      
+
       if (response.ok) {
         setStep(4);
       } else {
@@ -97,7 +97,7 @@ export function Donate() {
               <div className="w-16 sm:w-24 h-1 bg-gray-200 rounded-full overflow-hidden mx-2 mt-[-20px] sm:mt-[-28px]">
                 <div className={`h-full bg-brand transition-all duration-500 ${step >= 2 ? 'w-full' : 'w-0'}`}></div>
               </div>
-              
+
               {/* Step 2 indicator */}
               <div className={`flex flex-col items-center flex-1 ${step >= 2 ? 'text-brand' : 'text-gray-400'}`}>
                 <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold border-2 transition-colors mb-2 ${step >= 2 ? 'border-brand bg-brand/10' : 'border-gray-300'}`}>2</div>
@@ -106,7 +106,7 @@ export function Donate() {
               <div className="w-16 sm:w-24 h-1 bg-gray-200 rounded-full overflow-hidden mx-2 mt-[-20px] sm:mt-[-28px]">
                 <div className={`h-full bg-brand transition-all duration-500 ${step >= 3 ? 'w-full' : 'w-0'}`}></div>
               </div>
-              
+
               {/* Step 3 indicator */}
               <div className={`flex flex-col items-center flex-1 ${step >= 3 ? 'text-brand' : 'text-gray-400'}`}>
                 <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold border-2 transition-colors mb-2 ${step >= 3 ? 'border-brand bg-brand/10' : 'border-gray-300'}`}>3</div>
@@ -114,13 +114,13 @@ export function Donate() {
               </div>
             </div>
 
-            <form onSubmit={handleSubmit} action="https://formsubmit.co/ayaanninja2403@gmail.com" method="POST" encType="multipart/form-data" className="max-w-2xl mx-auto">
+            <form onSubmit={handleSubmit} action="https://formsubmit.co/kect.wb@gmail.com" method="POST" encType="multipart/form-data" className="max-w-2xl mx-auto">
               {/* Hidden Setup Fields for FormSubmit */}
               <input type="hidden" name="_subject" value={`New ${donationType === 'zakat' ? 'Zakat' : 'Donation'} Received: ₹${amount}`} />
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="Donation_Type" value={donationType === 'zakat' ? 'Zakat' : 'General Donation'} />
               <input type="hidden" name="Amount_INR" value={amount} />
-              
+
               {/* Preserved Form Fields mapping to state */}
               <input type="hidden" name="First_Name" value={donorDetails.firstName} />
               <input type="hidden" name="Last_Name" value={donorDetails.lastName} />
@@ -132,27 +132,25 @@ export function Donate() {
               {step === 1 && (
                 <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
                   <h3 className="text-2xl font-bold text-brand mb-6 text-center">Choose Donation Type</h3>
-                  
+
                   <div className="flex gap-4 mb-10">
                     <button
                       type="button"
                       onClick={() => setDonationType("donate")}
-                      className={`flex-1 py-4 font-bold rounded-2xl border-2 transition-all duration-300 ${
-                        donationType === "donate"
+                      className={`flex-1 py-4 font-bold rounded-2xl border-2 transition-all duration-300 ${donationType === "donate"
                           ? "bg-brand border-brand text-white shadow-lg scale-105"
                           : "bg-white border-gray-200 text-gray-700 hover:border-brand/50"
-                      }`}
+                        }`}
                     >
                       General Donation
                     </button>
                     <button
                       type="button"
                       onClick={() => setDonationType("zakat")}
-                      className={`flex-1 py-4 font-bold rounded-2xl border-2 transition-all duration-300 ${
-                        donationType === "zakat"
+                      className={`flex-1 py-4 font-bold rounded-2xl border-2 transition-all duration-300 ${donationType === "zakat"
                           ? "bg-brand border-brand text-white shadow-lg scale-105"
                           : "bg-white border-gray-200 text-gray-700 hover:border-brand/50"
-                      }`}
+                        }`}
                     >
                       Zakat
                     </button>
@@ -165,17 +163,16 @@ export function Donate() {
                         key={val}
                         type="button"
                         onClick={() => handleAmountClick(val)}
-                        className={`py-4 px-2 font-bold rounded-xl border-2 transition-all duration-300 ${
-                          amount === val
+                        className={`py-4 px-2 font-bold rounded-xl border-2 transition-all duration-300 ${amount === val
                             ? "bg-accent border-accent text-brand shadow-md scale-[1.03]"
                             : "bg-white border-gray-200 text-gray-700 hover:border-accent hover:bg-accent/5"
-                        }`}
+                          }`}
                       >
                         ₹{val}
                       </button>
                     ))}
                   </div>
-                  
+
                   <div className="mb-10">
                     <label className="block text-sm font-semibold text-gray-700 mb-3">Or enter a custom amount (₹)</label>
                     <input
@@ -188,7 +185,7 @@ export function Donate() {
                       required
                     />
                   </div>
-                  
+
                   <button
                     type="button"
                     onClick={nextStep}
@@ -208,24 +205,24 @@ export function Donate() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
                         <label className="block text-sm font-semibold text-gray-700 mb-2">First Name *</label>
-                        <input type="text" value={donorDetails.firstName} onChange={e => setDonorDetails({...donorDetails, firstName: e.target.value})} required className="w-full px-5 py-3 rounded-xl border-2 border-gray-200 focus:outline-none focus:border-brand transition-colors" />
+                        <input type="text" value={donorDetails.firstName} onChange={e => setDonorDetails({ ...donorDetails, firstName: e.target.value })} required className="w-full px-5 py-3 rounded-xl border-2 border-gray-200 focus:outline-none focus:border-brand transition-colors" />
                       </div>
                       <div>
                         <label className="block text-sm font-semibold text-gray-700 mb-2">Last Name *</label>
-                        <input type="text" value={donorDetails.lastName} onChange={e => setDonorDetails({...donorDetails, lastName: e.target.value})} required className="w-full px-5 py-3 rounded-xl border-2 border-gray-200 focus:outline-none focus:border-brand transition-colors" />
+                        <input type="text" value={donorDetails.lastName} onChange={e => setDonorDetails({ ...donorDetails, lastName: e.target.value })} required className="w-full px-5 py-3 rounded-xl border-2 border-gray-200 focus:outline-none focus:border-brand transition-colors" />
                       </div>
                     </div>
                     <div>
                       <label className="block text-sm font-semibold text-gray-700 mb-2">Email Address *</label>
-                      <input type="email" value={donorDetails.email} onChange={e => setDonorDetails({...donorDetails, email: e.target.value})} required className="w-full px-5 py-3 rounded-xl border-2 border-gray-200 focus:outline-none focus:border-brand transition-colors" />
+                      <input type="email" value={donorDetails.email} onChange={e => setDonorDetails({ ...donorDetails, email: e.target.value })} required className="w-full px-5 py-3 rounded-xl border-2 border-gray-200 focus:outline-none focus:border-brand transition-colors" />
                     </div>
                     <div>
                       <label className="block text-sm font-semibold text-gray-700 mb-2">Phone Number *</label>
-                      <input type="tel" value={donorDetails.phone} onChange={e => setDonorDetails({...donorDetails, phone: e.target.value})} required className="w-full px-5 py-3 rounded-xl border-2 border-gray-200 focus:outline-none focus:border-brand transition-colors" />
+                      <input type="tel" value={donorDetails.phone} onChange={e => setDonorDetails({ ...donorDetails, phone: e.target.value })} required className="w-full px-5 py-3 rounded-xl border-2 border-gray-200 focus:outline-none focus:border-brand transition-colors" />
                     </div>
                     <div>
                       <label className="block text-sm font-semibold text-gray-700 mb-2">Full Address</label>
-                      <textarea value={donorDetails.address} onChange={e => setDonorDetails({...donorDetails, address: e.target.value})} rows={3} className="w-full px-5 py-3 rounded-xl border-2 border-gray-200 focus:outline-none focus:border-brand transition-colors"></textarea>
+                      <textarea value={donorDetails.address} onChange={e => setDonorDetails({ ...donorDetails, address: e.target.value })} rows={3} className="w-full px-5 py-3 rounded-xl border-2 border-gray-200 focus:outline-none focus:border-brand transition-colors"></textarea>
                     </div>
                   </div>
 
@@ -252,7 +249,7 @@ export function Donate() {
                 <div className="animate-in fade-in slide-in-from-right-8 duration-500">
                   <h3 className="text-2xl font-bold text-center text-brand mb-2">Make Your Payment</h3>
                   <p className="text-center text-gray-600 mb-8">Amount to pay: <strong className="text-xl text-brand">₹{amount}</strong> for {donationType === 'zakat' ? 'Zakat' : 'General Donation'}</p>
-                  
+
                   <div className="bg-gray-50 border-2 border-gray-100 rounded-[2rem] p-6 md:p-10 mb-8 shadow-sm">
                     <div className="flex flex-col md:flex-row gap-10 items-center justify-between">
                       {/* Bank Details */}
@@ -265,7 +262,7 @@ export function Donate() {
                             <div className="flex justify-between"><span className="text-gray-500">A/C No.</span> <span className="font-bold text-lg text-brand tracking-widest text-right">1526104000089292</span></div>
                             <div className="flex justify-between"><span className="text-gray-500">A/C Type</span> <span className="font-bold text-right">SAVINGS</span></div>
                             <div className="flex justify-between"><span className="text-gray-500">IFSC Code</span> <span className="font-bold text-right">IBKL0001526</span></div>
-                            <div className="flex justify-between"><span className="text-gray-500">Branch</span> <span className="font-bold text-right text-xs md:text-sm">SHAKESPEARE SARANI<br/>IDBI HOUSE, 44, SHAKESPEARE SARANI</span></div>
+                            <div className="flex justify-between"><span className="text-gray-500">Branch</span> <span className="font-bold text-right text-xs md:text-sm">SHAKESPEARE SARANI<br />IDBI HOUSE, 44, SHAKESPEARE SARANI</span></div>
                           </>
                         ) : (
                           <>
@@ -274,7 +271,7 @@ export function Donate() {
                             <div className="flex justify-between"><span className="text-gray-500">A/C No.</span> <span className="font-bold text-lg text-brand tracking-widest text-right">50200059595139</span></div>
                             <div className="flex justify-between"><span className="text-gray-500">A/C Type</span> <span className="font-bold text-right">CURRENT</span></div>
                             <div className="flex justify-between"><span className="text-gray-500">IFSC Code</span> <span className="font-bold text-right">HDFC0004120</span></div>
-                            <div className="flex justify-between"><span className="text-gray-500">Branch</span> <span className="font-bold text-right text-xs md:text-sm">PARK STREET<br/>131, PARK STREET, KOLKATA-700016</span></div>
+                            <div className="flex justify-between"><span className="text-gray-500">Branch</span> <span className="font-bold text-right text-xs md:text-sm">PARK STREET<br />131, PARK STREET, KOLKATA-700016</span></div>
                           </>
                         )}
                       </div>
@@ -282,13 +279,13 @@ export function Donate() {
                       {/* QR Code */}
                       <div className="w-full md:w-1/2 flex flex-col items-center justify-center p-6 bg-white rounded-3xl border border-gray-100 shadow-sm relative group overflow-hidden">
                         <p className="font-bold text-brand mb-4 text-center">Scan to Pay using UPI</p>
-                        <img 
-                          src={donationType === 'zakat' ? '/qr-zakat.png' : '/qr-donate.png'} 
-                          alt={`${donationType} QR Code`} 
+                        <img
+                          src={donationType === 'zakat' ? '/qr-zakat.png' : '/qr-donate.png'}
+                          alt={`${donationType} QR Code`}
                           className="w-48 h-48 object-contain mb-6 mix-blend-multiply"
                         />
-                        <a 
-                          href={donationType === 'zakat' ? '/qr-zakat.png' : '/qr-donate.png'} 
+                        <a
+                          href={donationType === 'zakat' ? '/qr-zakat.png' : '/qr-donate.png'}
                           download={`${donationType}-qr-code.png`}
                           className="inline-flex items-center gap-2 px-6 py-2.5 bg-brand/5 text-brand font-bold rounded-full hover:bg-brand hover:text-white transition-all text-sm mb-2"
                         >
@@ -304,13 +301,13 @@ export function Donate() {
                       Upload Payment Screenshot <Upload className="w-5 h-5" />
                     </label>
                     <p className="text-sm text-gray-600 mb-6">After completing the transfer, please upload a screenshot of your successful transaction here so we can verify and issue your receipt.</p>
-                    
+
                     <div className="relative">
-                      <input 
-                        type="file" 
-                        name="attachment" 
-                        accept="image/*" 
-                        required 
+                      <input
+                        type="file"
+                        name="attachment"
+                        accept="image/*"
+                        required
                         className="block w-full text-sm text-gray-500
                           file:mr-4 file:py-3 file:px-6
                           file:rounded-full file:border-0
@@ -326,7 +323,7 @@ export function Donate() {
                       <ArrowLeft className="w-5 h-5 mr-2" /> Back
                     </button>
                     <button type="submit" disabled={isSubmitting} className="w-full sm:w-2/3 py-4 bg-accent text-brand font-bold rounded-xl hover:brightness-105 transition-all flex items-center justify-center text-lg shadow-lg disabled:opacity-70 disabled:cursor-not-allowed">
-                      {isSubmitting ? <Loader2 className="w-5 h-5 shrink-0 mr-2 animate-spin" /> : <CreditCard className="w-5 h-5 shrink-0 mr-2" />} 
+                      {isSubmitting ? <Loader2 className="w-5 h-5 shrink-0 mr-2 animate-spin" /> : <CreditCard className="w-5 h-5 shrink-0 mr-2" />}
                       <span>{isSubmitting ? "Submitting..." : "Submit Donation Details"}</span>
                     </button>
                   </div>

@@ -10,7 +10,7 @@ export function About() {
         title="About KECT"
         breadcrumbs={[{ label: "About KECT" }]}
       />
-      
+
       {/* Introduction Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -20,7 +20,7 @@ export function About() {
               Empowering Communities Through <span className="text-accent">Education</span>
             </h2>
             <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-              The Kolkata Educational and Charitable Trust (KECT) is a Public Charitable Trust managed by a board of ten expert Trustees. We are dedicated to uplifting the underprivileged sections of society by providing access to quality education and skill development.
+              The Kolkata Educational and Charitable Trust (KECT) is a Public Charitable Trust managed by a board of nine expert Trustees. We are dedicated to uplifting the underprivileged sections of society by providing access to quality education and skill development.
             </p>
             <p className="text-lg text-gray-600 mb-10 leading-relaxed">
               Since our inception, we have focused on creating sustainable impact in the lives of slum-dwelling populations, ensuring that every child has the opportunity to learn, grow, and succeed irrespective of their class, creed, or race.
@@ -29,13 +29,13 @@ export function About() {
           </div>
           <div className="relative">
             <div className="absolute inset-0 bg-accent/10 rounded-3xl transform translate-x-4 translate-y-4"></div>
-            <img 
-              src="https://picsum.photos/seed/kect-about/800/1000" 
-              alt="Children learning" 
-              className="relative rounded-3xl shadow-xl w-full object-cover h-[600px]"
+            <img
+              src="/about.jpg"
+              alt="Children learning"
+              className="relative rounded-3xl shadow-xl w-full object-cover aspect-video"
               referrerPolicy="no-referrer"
             />
-            
+
             {/* Floating Stats Card */}
             <div className="absolute -bottom-4 md:-bottom-8 left-4 md:-left-8 bg-white p-6 rounded-2xl shadow-xl border border-gray-100 max-w-xs">
               <div className="flex items-center gap-4 mb-2">
@@ -43,7 +43,7 @@ export function About() {
                   <Users className="w-6 h-6" />
                 </div>
                 <div>
-                  <h4 className="text-3xl font-bold text-brand">10+</h4>
+                  <h4 className="text-3xl font-bold text-brand">9</h4>
                   <p className="text-sm font-semibold text-gray-500 uppercase tracking-wider">Expert Trustees</p>
                 </div>
               </div>
