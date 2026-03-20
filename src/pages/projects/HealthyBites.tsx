@@ -1,6 +1,5 @@
 import { Hero } from "@/components/ui/Hero";
 import { SectionLabel } from "@/components/ui/SectionLabel";
-import { Utensils, HeartPulse, ShieldCheck } from "lucide-react";
 
 export function HealthyBites() {
   return (
@@ -14,38 +13,13 @@ export function HealthyBites() {
           <div>
             <SectionLabel text="Nutrition & Welfare" />
             <h2 className="text-4xl font-bold text-brand mt-6 mb-6">Nourishing the Community</h2>
-            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              The Healthy Bites Project is our dedicated community welfare initiative focused on providing nutritious meals to those in need. We believe that proper nutrition is fundamental to health, education, and overall well-being.
-            </p>
-            
-            <div className="space-y-6">
-              <div className="flex items-start">
-                <div className="w-12 h-12 bg-white rounded-xl shadow-sm border border-gray-100 flex items-center justify-center text-accent mr-4 shrink-0">
-                  <Utensils className="w-6 h-6" />
-                </div>
-                <div>
-                  <h4 className="text-xl font-bold text-brand mb-2">Food Distribution</h4>
-                  <p className="text-gray-600">Regular distribution of healthy, balanced meals to vulnerable populations.</p>
-                </div>
-              </div>
-              <div className="flex items-start">
-                <div className="w-12 h-12 bg-white rounded-xl shadow-sm border border-gray-100 flex items-center justify-center text-accent mr-4 shrink-0">
-                  <HeartPulse className="w-6 h-6" />
-                </div>
-                <div>
-                  <h4 className="text-xl font-bold text-brand mb-2">Nutritional Support</h4>
-                  <p className="text-gray-600">Focusing on essential nutrients to combat malnutrition, especially in children.</p>
-                </div>
-              </div>
-              <div className="flex items-start">
-                <div className="w-12 h-12 bg-white rounded-xl shadow-sm border border-gray-100 flex items-center justify-center text-accent mr-4 shrink-0">
-                  <ShieldCheck className="w-6 h-6" />
-                </div>
-                <div>
-                  <h4 className="text-xl font-bold text-brand mb-2">Pandemic Relief</h4>
-                  <p className="text-gray-600">Stepping up during crises to ensure no one in our community goes hungry.</p>
-                </div>
-              </div>
+            <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
+              <p>
+                <strong className="text-brand">Combating malnourishment</strong> — The Healthy Bites Project aims to address malnourishment among students at The KECT Academy, many of whom come from economically disadvantaged backgrounds and suffer from poor nutrition. 
+              </p>
+              <p>
+                To ensure they receive adequate nourishment, the Trust provides them with wholesome and nutritious snacks on a daily basis. A significant portion of the school's budget is allocated towards this initiative.
+              </p>
             </div>
           </div>
           

@@ -22,7 +22,7 @@ export function Pandemic() {
             <div className="space-y-8">
               <div className="bg-surface-alt rounded-3xl p-8 border border-gray-100 hover:shadow-md transition-shadow">
                 <h3 className="text-2xl font-bold text-brand mb-4 flex items-center gap-4">
-                  <span className="w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center text-lg shadow-sm">1</span> 
+                  <span className="w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center text-lg shadow-sm">1</span>
                   Un-interrupted Education
                 </h3>
                 <p className="leading-relaxed">
@@ -32,7 +32,7 @@ export function Pandemic() {
 
               <div className="bg-surface-alt rounded-3xl p-8 border border-gray-100 hover:shadow-md transition-shadow">
                 <h3 className="text-2xl font-bold text-brand mb-4 flex items-center gap-4">
-                  <span className="w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center text-lg shadow-sm">2</span> 
+                  <span className="w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center text-lg shadow-sm">2</span>
                   Workshop for parents
                 </h3>
                 <p className="leading-relaxed">
@@ -41,17 +41,17 @@ export function Pandemic() {
               </div>
 
               <div className="my-12 rounded-[2.5rem] overflow-hidden shadow-xl border border-gray-100">
-                <img 
-                  src="https://picsum.photos/seed/pandemic-relief/1200/600" 
-                  alt="Pandemic Relief Action" 
-                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" 
-                  referrerPolicy="no-referrer" 
+                <img
+                  src="/pandemic.jpg"
+                  alt="Pandemic Relief Action"
+                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700"
+                  referrerPolicy="no-referrer"
                 />
               </div>
 
               <div className="bg-surface-alt rounded-3xl p-8 border border-gray-100 hover:shadow-md transition-shadow">
                 <h3 className="text-2xl font-bold text-brand mb-4 flex items-center gap-4">
-                  <span className="w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center text-lg shadow-sm">3</span> 
+                  <span className="w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center text-lg shadow-sm">3</span>
                   Engaging students through various events
                 </h3>
                 <p className="leading-relaxed">
@@ -61,7 +61,7 @@ export function Pandemic() {
 
               <div className="bg-surface-alt rounded-3xl p-8 border border-gray-100 hover:shadow-md transition-shadow">
                 <h3 className="text-2xl font-bold text-brand mb-4 flex items-center gap-4">
-                  <span className="w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center text-lg shadow-sm">4</span> 
+                  <span className="w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center text-lg shadow-sm">4</span>
                   Relief distribution to parents during lockdown
                 </h3>
                 <p className="leading-relaxed">
@@ -71,7 +71,7 @@ export function Pandemic() {
 
               <div className="bg-surface-alt rounded-3xl p-8 border border-gray-100 hover:shadow-md transition-shadow">
                 <h3 className="text-2xl font-bold text-brand mb-4 flex items-center gap-4">
-                  <span className="w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center text-lg shadow-sm">5</span> 
+                  <span className="w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center text-lg shadow-sm">5</span>
                   Introduction of new classes
                 </h3>
                 <p className="leading-relaxed">
@@ -81,7 +81,7 @@ export function Pandemic() {
 
               <div className="bg-surface-alt rounded-3xl p-8 border border-gray-100 hover:shadow-md transition-shadow">
                 <h3 className="text-2xl font-bold text-brand mb-4 flex items-center gap-4">
-                  <span className="w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center text-lg shadow-sm">6</span> 
+                  <span className="w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center text-lg shadow-sm">6</span>
                   Workshop and Training for teachers
                 </h3>
                 <p className="leading-relaxed">
@@ -91,7 +91,7 @@ export function Pandemic() {
 
               <div className="bg-surface-alt rounded-3xl p-8 border border-gray-100 hover:shadow-md transition-shadow">
                 <h3 className="text-2xl font-bold text-brand mb-4 flex items-center gap-4">
-                  <span className="w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center text-lg shadow-sm">7</span> 
+                  <span className="w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center text-lg shadow-sm">7</span>
                   Skill Development programme for the female members of students' families
                 </h3>
                 <p className="leading-relaxed">

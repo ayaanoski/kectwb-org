@@ -3,8 +3,11 @@ import { DocumentList } from "@/components/ui/DocumentList";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 
 const PUBLICATIONS = [
-  { id: "1", title: "Aaghaaz Souvenir 2025", date: "January 2025", fileSize: "5.4 MB", fileUrl: "#" },
-  { id: "2", title: "KECT Brochure", date: "March 2024", fileSize: "3.2 MB", fileUrl: "#" },
+  { id: "1", title: "Aaghaaz Souvenir 2025", fileUrl: "/docs/aaghaaz_2025.pdf" },
+  { id: "2", title: "KECT Brochure", fileUrl: "/docs/kect_brochure.pdf" },
+  { id: "3", title: "KECT Brochure 2021", fileUrl: "/docs/brochure_2021.pdf" },
+  { id: "4", title: "KECT Brochure 2022", fileUrl: "/docs/brochure_2022.pdf" },
+
 ];
 
 export function Publications() {

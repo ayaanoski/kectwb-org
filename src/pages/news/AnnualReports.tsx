@@ -3,9 +3,9 @@ import { DocumentList } from "@/components/ui/DocumentList";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 
 const REPORTS = [
-  { id: "1", title: "Annual Report 2024-2025", date: "August 2025", fileSize: "2.4 MB", fileUrl: "#" },
-  { id: "2", title: "Annual Report 2023-2024", date: "August 2024", fileSize: "1.8 MB", fileUrl: "#" },
-  { id: "3", title: "Annual Report 2022-2023", date: "August 2023", fileSize: "2.1 MB", fileUrl: "#" },
+  { id: "1", title: "Annual Report 2024-2025", fileUrl: "/docs/annual_report_2024-2025.pdf" },
+  { id: "2", title: "Annual Report 2023-2024", fileUrl: "/docs/annual_report_2023-2024.pdf" },
+  { id: "3", title: "Annual Report 2022-2023", fileUrl: "/docs/annual_report_2022-2023.pdf" },
 ];
 
 export function AnnualReports() {
