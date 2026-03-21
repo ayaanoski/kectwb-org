@@ -22,16 +22,6 @@ export function HealthyBites() {
               </p>
             </div>
           </div>
-          
-          <div className="relative">
-            <div className="absolute inset-0 bg-brand/5 rounded-3xl transform translate-x-4 translate-y-4"></div>
-            <img 
-              src="https://picsum.photos/seed/food/800/1000" 
-              alt="Food distribution" 
-              className="relative rounded-3xl shadow-xl w-full object-cover h-[600px]" 
-              referrerPolicy="no-referrer" 
-            />
-          </div>
         </div>
       </div>
     </div>
