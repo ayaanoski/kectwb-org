@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Facebook, Twitter, Instagram, Mail, Phone, MapPin, Heart, ChevronRight } from "lucide-react";
+import { Facebook, Twitter, Instagram, Mail, Phone, MapPin, Heart, ChevronRight, Youtube } from "lucide-react";
 
 export function Footer() {
   return (
@@ -21,14 +21,11 @@ export function Footer() {
               The Kolkata Educational and Charitable Trust is dedicated to empowering underprivileged communities through quality education, skill development, and holistic support.
             </p>
             <div className="flex items-center space-x-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-primary hover:text-white transition-all duration-300">
+              <a href="https://www.facebook.com/kectacademy" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-primary hover:text-white transition-all duration-300">
                 <Facebook className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-primary hover:text-white transition-all duration-300">
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-primary hover:text-white transition-all duration-300">
-                <Instagram className="w-5 h-5" />
+              <a href="https://www.youtube.com/@kolkataeducationalcharitab1466" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-primary hover:text-white transition-all duration-300">
+                <Youtube className="w-5 h-5" />
               </a>
             </div>
           </div>
@@ -89,11 +86,6 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-sm text-blue-100/60 text-center md:text-left gap-4">
           <p>&copy; {new Date().getFullYear()} The Kolkata Educational and Charitable Trust. All rights reserved.</p>
-          <div className="flex flex-wrap justify-center items-center gap-4 mt-4 md:mt-0">
-            <Link to="#" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <Link to="#" className="hover:text-white transition-colors">Terms of Service</Link>
-            <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs">Trust Reg No: [PLACEHOLDER]</span>
-          </div>
         </div>
       </div>
     </footer>
